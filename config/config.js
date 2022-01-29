@@ -186,7 +186,7 @@ config.Razorpay_Transaction_Data = [
  * 
  * **********************************************************/
 
-config.Whether_Production_Settings = false;
+config.Whether_Production_Settings = true;
 if (config.Whether_Production_Settings) {
     //Production Settings
     config.host = 'https://apidh.mobilerechargeapp.net/';
@@ -198,7 +198,8 @@ if (config.Whether_Production_Settings) {
     config.api_port = 8001;
     config.admin_port = 8002;
     config.web_port = 8003;
-    config.MongoURL = `mongodb+srv://newdb:newdb@cluster0.yo4d2.mongodb.net/dreamhouse?retryWrites=true&w=majority`;
+    config.MongoURL = `mongodb+srv://couponpay:couponpay123@cluster0.dfzce.mongodb.net/vSociety?retryWrites=true&w=majority`;
+    // config.MongoURL = `mongodb+srv://newdb:newdb@cluster0.yo4d2.mongodb.net/dreamhouse?retryWrites=true&w=majority`;
     // config.razorpay = {
     //     host: "api.razorpay.com/v1",
     //     baseURL: "https://api.razorpay.com/v1",
@@ -234,7 +235,8 @@ if (config.Whether_Production_Settings) {
     config.api_port = 6001;
     config.admin_port = 6002;
     config.web_port = 6003;
-    config.MongoURL = `mongodb+srv://newdb:newdb@cluster0.yo4d2.mongodb.net/dreamhouse?retryWrites=true&w=majority`;
+    config.MongoURL = `mongodb+srv://couponpay:couponpay123@cluster0.dfzce.mongodb.net/vSociety-Test?retryWrites=true&w=majority`;
+    // config.MongoURL = `mongodb+srv://newdb:newdb@cluster0.yo4d2.mongodb.net/dreamhouse?retryWrites=true&w=majority`;
     config.razorpay = {
         host: "api.razorpay.com/v1",
         baseURL: "https://api.razorpay.com/v1",
