@@ -186,7 +186,7 @@ config.Razorpay_Transaction_Data = [
  * 
  * **********************************************************/
 
-config.Whether_Production_Settings = true;
+config.Whether_Production_Settings = false;
 if (config.Whether_Production_Settings) {
     //Production Settings
     config.host = 'https://apidh.mobilerechargeapp.net/';
