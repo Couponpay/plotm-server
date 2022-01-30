@@ -6608,40 +6608,40 @@ UserController.Check_for_Transfer_OTP_Tries_Count = (values) => {
 }
 
 
-// UserController.Generate_User_OTP_Send_Message = (values) => {
-//     return new Promise((resolve, reject) => {
-//         setImmediate(async () => {
-//             try {
-//                 let query = {
-//                     CountryCode: values.CountryCode,
-//                     PhoneNumber: values.PhoneNumber,
-//                 }
-//                 //let Result = await Users.findOne(query).lean().exec();
-//                 if (Result != null) {
-//                     if (Result.Password_Available == true || Result.Password_Available == "true") {
-//                         if (values.Password_Reset == false || values.Password_Reset == "false") {
-//                             resolve({ success: true, extras: { Status: "OTP Sent Successfully", Status_Code: 2 } }) // call password Api
-//                         } else if (values.Password_Reset == true || values.Password_Reset == "true") {
-//                             let OTP_Process = await UserController.Generate_OTP(values);
-//                             resolve(OTP_Process)
-//                         } else {
-//                             let OTP_Process = await UserController.Generate_OTP(values);
-//                             resolve(OTP_Process)
-//                         }
-//                     } else {
-//                         let OTP_Process = await UserController.Generate_OTP(values);
-//                         resolve(OTP_Process)
-//                     }
-//                 } else {
-//                     let OTP_Process = await UserController.Generate_OTP(values);
-//                     resolve(OTP_Process)
-//                 }
-//             } catch (error) {
-//                 reject(await CommonController.Common_Error_Handler(error));
-//             }
-//         });
-//     });
-// }
+UserController.Generate_User_OTP_Send_Message = (values) => {
+    return new Promise((resolve, reject) => {
+        setImmediate(async () => {
+            try {
+                let query = {
+                    CountryCode: values.CountryCode,
+                    PhoneNumber: values.PhoneNumber,
+                }
+                let Result = await Users.findOne(query).lean().exec();
+                if (Result != null) {
+                    if (Result.Password_Available == true || Result.Password_Available == "true") {
+                        if (values.Password_Reset == false || values.Password_Reset == "false") {
+                            resolve({ success: true, extras: { Status: "OTP Sent Successfully", Status_Code: 2 } }) // call password Api
+                        } else if (values.Password_Reset == true || values.Password_Reset == "true") {
+                            let OTP_Process = await UserController.Generate_OTP(values);
+                            resolve(OTP_Process)
+                        } else {
+                            let OTP_Process = await UserController.Generate_OTP(values);
+                            resolve(OTP_Process)
+                        }
+                    } else {
+                        let OTP_Process = await UserController.Generate_OTP(values);
+                        resolve(OTP_Process)
+                    }
+                } else {
+                    let OTP_Process = await UserController.Generate_OTP(values);
+                    resolve(OTP_Process)
+                }
+            } catch (error) {
+                reject(await CommonController.Common_Error_Handler(error));
+            }
+        });
+    });
+}
 
 
 UserController.Generate_OTP_Transfer = (values) => {

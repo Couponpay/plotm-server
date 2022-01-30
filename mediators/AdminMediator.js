@@ -1865,8 +1865,8 @@ AdminMediator.Create_Admin_User = async (req, res) => {
             && req.body.Password != null && req.body.Password != ''
             && req.body.Admin_Section_Permision != null && isBoolean(req.body.Admin_Section_Permision)
         ) {
-            //let AdminData ='';
-            let AdminData = await CommonController.Check_for_Admin(req.body);
+            let AdminData ='';
+            // let AdminData = await CommonController.Check_for_Admin(req.body);
             let ValidityStatus = await CommonController.Common_Email_Validation(req.body.EmailID);
             ValidityStatus = await AdminController.Check_Whether_Admin_Email_Already_Exist(req.body);
             let Result = await AdminController.Create_Admin_User(req.body, AdminData);
